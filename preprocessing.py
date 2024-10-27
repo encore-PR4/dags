@@ -27,7 +27,7 @@ with DAG(
         task_id="kafka_c",
         bash_command="""
         echo ds_nodash : {{ds_nodash}} ;
-        $SPARK_HOME/bin/spark-submit $SPARK_HOME/py/spark_stream.py{{ ds_nodash }} """,
+        $SPARK_HOME/bin/spark-submit $SPARK_HOME/py/spark_stream.py {{ ds_nodash }} """,
         )
     
     task_end = EmptyOperator(task_id='end', trigger_rule="all_done")
